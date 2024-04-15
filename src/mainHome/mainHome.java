@@ -23,6 +23,12 @@ public class mainHome extends javax.swing.JFrame {
         initComponents();
         setImageLabel(jLabel4, "src/images/Cuadrado fondo enfocado.png");
         setImageLabel(jLabel1, "src/images/EPIS0.png"); 
+        setImageLabel(jLabel6, "src/images/Barrita aislada descripción.png"); 
+        setImageLabel(jLabel7, "src/images/PuntoCarruselFilled.png"); 
+        setImageLabel(jLabel8, "src/images/PuntoCarruselEmpty.png"); 
+        setImageLabel(jLabel9, "src/images/PuntoCarruselEmpty.png"); 
+        setImageLabel(jLabel10, "src/images/PuntoCarruselEmpty.png"); 
+        setImageLabel(jLabel11, "src/images/PuntoCarruselEmpty.png"); 
         setButtonLabel(jButton1, "src/images/Comenzar.png");
         setImageLabel(jLabel3, "src/images/Flecha derecha.png");
         setImageLabel(jLabel2, "src/images/Flecha izquierda.png");
@@ -58,6 +64,14 @@ public class mainHome extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -68,7 +82,7 @@ public class mainHome extends javax.swing.JFrame {
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 66, 404, 183));
 
-        jLabel4.setText("jLabel4");
+        jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 450, 150));
 
         jButton1.setBackground(new java.awt.Color(14, 77, 144));
@@ -91,8 +105,42 @@ public class mainHome extends javax.swing.JFrame {
         });
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(652, 130, 38, 48));
 
+        jLabel5.setFont(new java.awt.Font("Raleway Black", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(247, 247, 247));
         jLabel5.setText("Tipologia y características de los epis");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, -1, -1));
+
+        jScrollPane1.setBackground(new java.awt.Color(14, 77, 144));
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        jTextArea1.setEditable(false);
+        jTextArea1.setBackground(new java.awt.Color(14, 77, 144));
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Raleway", 1, 12)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque efficitur felis id commodo \negestas. Donec a nulla eu nulla luctus sodales. Suspendisse faucibus risus in felis cursus, ut cursus \nneque consectetur. Etiam vel ex efficitur, fringilla f\n");
+        jTextArea1.setAutoscrolls(false);
+        jTextArea1.setBorder(null);
+        jTextArea1.setSelectedTextColor(new java.awt.Color(144, 144, 144));
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 580, 70));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 10, 20));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 10, 10));
+
+        jLabel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 260, 10, 10));
+
+        jLabel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 260, 10, 10));
+
+        jLabel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 260, 10, 10));
+
+        jLabel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 260, 10, 10));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 400));
 
@@ -112,20 +160,40 @@ public class mainHome extends javax.swing.JFrame {
         
         if(cont == 1){
             setImageLabel(jLabel1, "src/images/EPIS0.png");
-            System.out.println(cont);
+            setImageLabel(jLabel7, "src/images/PuntoCarruselFilled.png"); 
+            setImageLabel(jLabel8, "src/images/PuntoCarruselEmpty.png"); 
+            setImageLabel(jLabel9, "src/images/PuntoCarruselEmpty.png"); 
+            setImageLabel(jLabel10, "src/images/PuntoCarruselEmpty.png"); 
+            setImageLabel(jLabel11, "src/images/PuntoCarruselEmpty.png");
             cont = 6;
         }else if(cont == 2){
             setImageLabel(jLabel1, "src/images/EPIS1.png");
-            System.out.println(cont);
+            setImageLabel(jLabel7, "src/images/PuntoCarruselEmpty.png"); 
+            setImageLabel(jLabel8, "src/images/PuntoCarruselFilled.png"); 
+            setImageLabel(jLabel9, "src/images/PuntoCarruselEmpty.png"); 
+            setImageLabel(jLabel10, "src/images/PuntoCarruselEmpty.png"); 
+            setImageLabel(jLabel11, "src/images/PuntoCarruselEmpty.png");
         }else if(cont == 3){
             setImageLabel(jLabel1, "src/images/EPIS2.png");
-            System.out.println(cont);
+            setImageLabel(jLabel7, "src/images/PuntoCarruselEmpty.png"); 
+            setImageLabel(jLabel8, "src/images/PuntoCarruselEmpty.png"); 
+            setImageLabel(jLabel9, "src/images/PuntoCarruselFilled.png"); 
+            setImageLabel(jLabel10, "src/images/PuntoCarruselEmpty.png"); 
+            setImageLabel(jLabel11, "src/images/PuntoCarruselEmpty.png");
         }else if(cont == 4){
             setImageLabel(jLabel1, "src/images/EPIS3.png");
-            System.out.println(cont);
+            setImageLabel(jLabel7, "src/images/PuntoCarruselEmpty.png"); 
+            setImageLabel(jLabel8, "src/images/PuntoCarruselEmpty.png"); 
+            setImageLabel(jLabel9, "src/images/PuntoCarruselEmpty.png"); 
+            setImageLabel(jLabel10, "src/images/PuntoCarruselFilled.png"); 
+            setImageLabel(jLabel11, "src/images/PuntoCarruselEmpty.png");
         }else if(cont == 5){
             setImageLabel(jLabel1, "src/images/EPIS4.png");
-            System.out.println(cont);
+            setImageLabel(jLabel7, "src/images/PuntoCarruselEmpty.png"); 
+            setImageLabel(jLabel8, "src/images/PuntoCarruselEmpty.png"); 
+            setImageLabel(jLabel9, "src/images/PuntoCarruselEmpty.png"); 
+            setImageLabel(jLabel10, "src/images/PuntoCarruselEmpty.png"); 
+            setImageLabel(jLabel11, "src/images/PuntoCarruselFilled.png");
         }
     }//GEN-LAST:event_jLabel2MousePressed
 
@@ -137,19 +205,39 @@ public class mainHome extends javax.swing.JFrame {
         
         if(cont == 1){
             setImageLabel(jLabel1, "src/images/EPIS0.png");
-            System.out.println(cont);
+            setImageLabel(jLabel7, "src/images/PuntoCarruselFilled.png"); 
+            setImageLabel(jLabel8, "src/images/PuntoCarruselEmpty.png"); 
+            setImageLabel(jLabel9, "src/images/PuntoCarruselEmpty.png"); 
+            setImageLabel(jLabel10, "src/images/PuntoCarruselEmpty.png"); 
+            setImageLabel(jLabel11, "src/images/PuntoCarruselEmpty.png");
         }else if(cont == 2){
             setImageLabel(jLabel1, "src/images/EPIS1.png");
-            System.out.println(cont);
+            setImageLabel(jLabel7, "src/images/PuntoCarruselEmpty.png"); 
+            setImageLabel(jLabel8, "src/images/PuntoCarruselFilled.png"); 
+            setImageLabel(jLabel9, "src/images/PuntoCarruselEmpty.png"); 
+            setImageLabel(jLabel10, "src/images/PuntoCarruselEmpty.png"); 
+            setImageLabel(jLabel11, "src/images/PuntoCarruselEmpty.png");
         }else if(cont == 3){
             setImageLabel(jLabel1, "src/images/EPIS2.png");
-            System.out.println(cont);
+            setImageLabel(jLabel7, "src/images/PuntoCarruselEmptypng"); 
+            setImageLabel(jLabel8, "src/images/PuntoCarruselEmpty.png"); 
+            setImageLabel(jLabel9, "src/images/PuntoCarruselFilled.png"); 
+            setImageLabel(jLabel10, "src/images/PuntoCarruselEmpty.png"); 
+            setImageLabel(jLabel11, "src/images/PuntoCarruselEmpty.png");
         }else if(cont == 4){
             setImageLabel(jLabel1, "src/images/EPIS3.png");
-            System.out.println(cont);
+            setImageLabel(jLabel7, "src/images/PuntoCarruselEmpty.png"); 
+            setImageLabel(jLabel8, "src/images/PuntoCarruselEmpty.png"); 
+            setImageLabel(jLabel9, "src/images/PuntoCarruselEmpty.png"); 
+            setImageLabel(jLabel10, "src/images/PuntoCarruselFilled.png"); 
+            setImageLabel(jLabel11, "src/images/PuntoCarruselEmpty.png");
         }else if(cont == 5){
             setImageLabel(jLabel1, "src/images/EPIS4.png");
-            System.out.println(cont);
+            setImageLabel(jLabel7, "src/images/PuntoCarruselEmpty.png"); 
+            setImageLabel(jLabel8, "src/images/PuntoCarruselEmpty.png"); 
+            setImageLabel(jLabel9, "src/images/PuntoCarruselEmpty.png"); 
+            setImageLabel(jLabel10, "src/images/PuntoCarruselEmpty.png"); 
+            setImageLabel(jLabel11, "src/images/PuntoCarruselFilled.png");
             cont = 0;
         }
     }//GEN-LAST:event_jLabel3MousePressed
@@ -193,11 +281,19 @@ public class mainHome extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
 
