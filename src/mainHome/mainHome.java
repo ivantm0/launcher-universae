@@ -4,6 +4,12 @@
  */
 package mainHome;
 
+import java.awt.Image;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+
 /**
  *
  * @author rajo1
@@ -15,7 +21,26 @@ public class mainHome extends javax.swing.JFrame {
      */
     public mainHome() {
         initComponents();
+        setImageLabel(jLabel4, "src/images/Cuadrado fondo enfocado.png");
+        setImageLabel(jLabel1, "src/images/EPIS0.png"); 
+        setButtonLabel(jButton1, "src/images/Comenzar.png");
+        setImageLabel(jLabel3, "src/images/Flecha derecha.png");
+        setImageLabel(jLabel2, "src/images/Flecha izquierda.png");
     }
+    
+    public void setImageLabel(JLabel labelName, String root){
+            ImageIcon image = new ImageIcon(root);
+            Icon icon = new ImageIcon(image.getImage().getScaledInstance(labelName.getWidth(), labelName.getHeight(), Image.SCALE_DEFAULT));
+            labelName.setIcon(icon);
+            this.repaint();
+        }
+    
+    public void setButtonLabel(JButton buttonName, String root){
+            ImageIcon image = new ImageIcon(root);
+            Icon icon = new ImageIcon(image.getImage().getScaledInstance(buttonName.getWidth(), buttonName.getHeight(), Image.SCALE_DEFAULT));
+            buttonName.setIcon(icon);
+            this.repaint();
+        }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,40 +51,108 @@ public class mainHome extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("hello");
+        jPanel2.setBackground(new java.awt.Color(14, 77, 144));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setText("ADIOS!");
+        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 66, 404, 183));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(83, 83, 83)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(220, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(143, 143, 143))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(83, 83, 83)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
-                .addComponent(jLabel2)
-                .addContainerGap(79, Short.MAX_VALUE))
-        );
+        jLabel4.setText("jLabel4");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 450, 150));
+
+        jButton1.setBackground(new java.awt.Color(14, 77, 144));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Comenzar.png"))); // NOI18N
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(652, 331, 120, 32));
+
+        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel2MousePressed(evt);
+            }
+        });
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(116, 128, 40, 46));
+
+        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel3MousePressed(evt);
+            }
+        });
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(652, 130, 38, 48));
+
+        jLabel5.setText("Tipologia y características de los epis");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, -1, -1));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 400));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jLabel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MousePressed
+                
+        cont--;
+        if(cont == 0){
+            cont = 5;
+        }
+        
+        if(cont < 0){
+            cont = 4;
+        }
+        
+        if(cont == 1){
+            setImageLabel(jLabel1, "src/images/EPIS0.png");
+            System.out.println(cont);
+            cont = 6;
+        }else if(cont == 2){
+            setImageLabel(jLabel1, "src/images/EPIS1.png");
+            System.out.println(cont);
+        }else if(cont == 3){
+            setImageLabel(jLabel1, "src/images/EPIS2.png");
+            System.out.println(cont);
+        }else if(cont == 4){
+            setImageLabel(jLabel1, "src/images/EPIS3.png");
+            System.out.println(cont);
+        }else if(cont == 5){
+            setImageLabel(jLabel1, "src/images/EPIS4.png");
+            System.out.println(cont);
+        }
+    }//GEN-LAST:event_jLabel2MousePressed
+
+    private void jLabel3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MousePressed
+        cont++;
+        if(cont >= 6){
+            cont = 1;
+        }  
+        
+        if(cont == 1){
+            setImageLabel(jLabel1, "src/images/EPIS0.png");
+            System.out.println(cont);
+        }else if(cont == 2){
+            setImageLabel(jLabel1, "src/images/EPIS1.png");
+            System.out.println(cont);
+        }else if(cont == 3){
+            setImageLabel(jLabel1, "src/images/EPIS2.png");
+            System.out.println(cont);
+        }else if(cont == 4){
+            setImageLabel(jLabel1, "src/images/EPIS3.png");
+            System.out.println(cont);
+        }else if(cont == 5){
+            setImageLabel(jLabel1, "src/images/EPIS4.png");
+            System.out.println(cont);
+            cont = 0;
+        }
+    }//GEN-LAST:event_jLabel3MousePressed
 
     /**
      * @param args the command line arguments
@@ -95,9 +188,46 @@ public class mainHome extends javax.swing.JFrame {
             }
         });
     }
-
+    
+    private int cont = 1;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
+
+
+
+/*cont--;
+        if(cont == 0){
+            cont = 5;
+        }
+        
+        if(cont < 0){
+            cont = 4;
+        }
+        
+        if(cont == 1){
+            setImageLabel(jLabel1, "src/images/EPIS0.png");
+            System.out.println(cont);
+            cont = 6;
+        }else if(cont == 2){
+            setImageLabel(jLabel1, "src/images/EPIS1.png");
+            System.out.println(cont);
+        }else if(cont == 3){
+            setImageLabel(jLabel1, "src/images/EPIS2.png");
+            System.out.println(cont);
+        }else if(cont == 4){
+            setImageLabel(jLabel1, "src/images/EPIS3.png");
+            System.out.println(cont);
+        }else if(cont == 5){
+            setImageLabel(jLabel1, "src/images/EPIS4.png");
+            System.out.println(cont);
+        }*/
+
+
