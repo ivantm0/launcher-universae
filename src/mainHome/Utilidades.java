@@ -8,6 +8,7 @@ import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  *
@@ -33,5 +34,13 @@ public class Utilidades {
         labelName.repaint();
     }
     
+    public void showPanel(JPanel p, JPanel p2){
+        p.setSize(p2.getWidth(), p2.getHeight());
+        p.setLocation(0, 0);
+        p2.removeAll();
+        p2.add(p, new org.netbeans.lib.awtextra.AbsoluteConstraints(0,0,-1,-1));
+        p2.revalidate();
+        p2.repaint();
+    }
     
 }

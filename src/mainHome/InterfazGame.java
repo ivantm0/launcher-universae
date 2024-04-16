@@ -8,17 +8,18 @@ import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  *
  * @author ivant
  */
-public class EPIS extends javax.swing.JFrame {
+public class InterfazGame extends javax.swing.JFrame {
 
     /**
      * Creates new form NewJFrame
      */
-    public EPIS() {
+    public InterfazGame() {
         initComponents();
     }
     
@@ -298,6 +299,10 @@ public class EPIS extends javax.swing.JFrame {
         n.pequenyo(FlechaDcha, "src/images/Flecha derecha.png");
     }//GEN-LAST:event_FlechaDchaMouseExited
 
+    public JPanel getFondo() {
+        return jPanel1;
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -315,21 +320,23 @@ public class EPIS extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EPIS.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfazGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EPIS.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfazGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EPIS.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfazGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EPIS.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfazGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EPIS().setVisible(true);
+                new InterfazGame().setVisible(true);
             }
         });
     }
