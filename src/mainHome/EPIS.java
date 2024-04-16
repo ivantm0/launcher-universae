@@ -280,40 +280,22 @@ public class EPIS extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_FlechaDchaMousePressed
 
+    Utilidades n = new Utilidades();
     private void FlechaIzqMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FlechaIzqMouseEntered
-        int height = FlechaIzq.getIcon().getIconHeight();
-        int width = FlechaIzq.getIcon().getIconWidth();
-        ImageIcon image = new ImageIcon("src/images/Flecha izquierda.png");
-        Icon icon = new ImageIcon(image.getImage().getScaledInstance(width+10, height+10, Image.SCALE_DEFAULT));
-        FlechaIzq.setIcon(icon);
-        this.repaint();
+        n.grande(FlechaIzq, "src/images/Flecha izquierda.png");
     }//GEN-LAST:event_FlechaIzqMouseEntered
 
     private void FlechaIzqMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FlechaIzqMouseExited
-        int height = FlechaIzq.getIcon().getIconHeight();
-        int width = FlechaIzq.getIcon().getIconWidth();
-        ImageIcon image = new ImageIcon("src/images/Flecha izquierda.png");
-        Icon icon = new ImageIcon(image.getImage().getScaledInstance(width-10, height-10, Image.SCALE_DEFAULT));
-        FlechaIzq.setIcon(icon);
-        this.repaint();
+        n.pequenyo(FlechaIzq, "src/images/Flecha izquierda.png");
     }//GEN-LAST:event_FlechaIzqMouseExited
 
     private void FlechaDchaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FlechaDchaMouseEntered
-        int height = FlechaDcha.getIcon().getIconHeight();
-        int width = FlechaDcha.getIcon().getIconWidth();
-        ImageIcon image = new ImageIcon("src/images/Flecha derecha.png");
-        Icon icon = new ImageIcon(image.getImage().getScaledInstance(width+10, height+10, Image.SCALE_DEFAULT));
-        FlechaDcha.setIcon(icon);
-        this.repaint();
+        n.grande(FlechaDcha, "src/images/Flecha derecha.png");
     }//GEN-LAST:event_FlechaDchaMouseEntered
 
     private void FlechaDchaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FlechaDchaMouseExited
-        int height = FlechaDcha.getIcon().getIconHeight();
-        int width = FlechaDcha.getIcon().getIconWidth();
-        ImageIcon image = new ImageIcon("src/images/Flecha derecha.png");
-        Icon icon = new ImageIcon(image.getImage().getScaledInstance(width-10, height-10, Image.SCALE_DEFAULT));
-        FlechaDcha.setIcon(icon);
-        this.repaint();
+        
+        n.pequenyo(FlechaDcha, "src/images/Flecha derecha.png");
     }//GEN-LAST:event_FlechaDchaMouseExited
 
     /**
