@@ -17,6 +17,11 @@ public class InterfazBase extends javax.swing.JFrame {
      */
     public InterfazBase() {
         initComponents();
+        this.setExtendedState(this.MAXIMIZED_BOTH);
+        
+        InterfazHome p = new InterfazHome();
+        Utilidades n = new Utilidades();
+        n.showPanel(p.getFondo(), contenido);
     }
 
     /**
@@ -50,9 +55,12 @@ public class InterfazBase extends javax.swing.JFrame {
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1920, 1080));
+        setMinimumSize(new java.awt.Dimension(1920, 1080));
         setPreferredSize(new java.awt.Dimension(1920, 1080));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setMaximumSize(new java.awt.Dimension(1920, 1080));
         jPanel1.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(2573, 0, -1, -1));

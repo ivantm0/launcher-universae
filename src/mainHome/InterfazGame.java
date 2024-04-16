@@ -77,6 +77,7 @@ public class InterfazGame extends javax.swing.JFrame {
         jPanel1.add(FondoCarruselIzq, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 790, -1));
 
         FlechaIzq.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Flecha izquierda.png"))); // NOI18N
+        FlechaIzq.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         FlechaIzq.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 FlechaIzqMouseEntered(evt);
@@ -91,6 +92,7 @@ public class InterfazGame extends javax.swing.JFrame {
         jPanel1.add(FlechaIzq, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, -1, -1));
 
         FlechaDcha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Flecha derecha.png"))); // NOI18N
+        FlechaDcha.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         FlechaDcha.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 FlechaDchaMouseEntered(evt);
@@ -295,7 +297,6 @@ public class InterfazGame extends javax.swing.JFrame {
     }//GEN-LAST:event_FlechaDchaMouseEntered
 
     private void FlechaDchaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FlechaDchaMouseExited
-        
         n.pequenyo(FlechaDcha, "src/images/Flecha derecha.png");
     }//GEN-LAST:event_FlechaDchaMouseExited
 

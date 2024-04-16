@@ -22,13 +22,6 @@ public class InterfazHome extends javax.swing.JFrame {
     public InterfazHome() {
         initComponents();
     }
-    
-    public void setImageLabel(JLabel labelName, String root){
-            ImageIcon image = new ImageIcon(root);
-            Icon icon = new ImageIcon(image.getImage().getScaledInstance(labelName.getWidth(), labelName.getHeight(), Image.SCALE_DEFAULT));
-            labelName.setIcon(icon);
-            this.repaint();
-        }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -54,6 +47,7 @@ public class InterfazHome extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         miniatura1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Miniaturas/HomeButton0.png"))); // NOI18N
+        miniatura1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         miniatura1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 miniatura1MouseEntered(evt);
@@ -68,6 +62,7 @@ public class InterfazHome extends javax.swing.JFrame {
         jPanel1.add(miniatura1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, -1, -1));
 
         miniatura2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Miniaturas/HomeButton1.png"))); // NOI18N
+        miniatura2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         miniatura2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 miniatura2MouseEntered(evt);
@@ -79,6 +74,7 @@ public class InterfazHome extends javax.swing.JFrame {
         jPanel1.add(miniatura2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 100, -1, -1));
 
         miniatura3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Miniaturas/HomeButton2.png"))); // NOI18N
+        miniatura3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         miniatura3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 miniatura3MouseEntered(evt);
@@ -90,6 +86,7 @@ public class InterfazHome extends javax.swing.JFrame {
         jPanel1.add(miniatura3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 100, -1, -1));
 
         miniatura4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Miniaturas/HomeButton3.png"))); // NOI18N
+        miniatura4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         miniatura4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 miniatura4MouseEntered(evt);
@@ -101,6 +98,7 @@ public class InterfazHome extends javax.swing.JFrame {
         jPanel1.add(miniatura4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, -1, -1));
 
         miniatura5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Miniaturas/HomeButton4.png"))); // NOI18N
+        miniatura5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         miniatura5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 miniatura5MouseEntered(evt);
@@ -112,6 +110,7 @@ public class InterfazHome extends javax.swing.JFrame {
         jPanel1.add(miniatura5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 470, -1, -1));
 
         miniatura6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Miniaturas/HomeButton5.png"))); // NOI18N
+        miniatura6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         miniatura6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 miniatura6MouseEntered(evt);
@@ -132,51 +131,51 @@ public class InterfazHome extends javax.swing.JFrame {
 
     Utilidades n = new Utilidades();
     private void miniatura1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniatura1MouseEntered
-        n.grande(miniatura1, "src/images/Miniaturas/HomeButton0.png");
+        n.grande(miniatura1, "src/images/miniaturas/HomeButton0.png");
     }//GEN-LAST:event_miniatura1MouseEntered
 
     private void miniatura1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniatura1MouseExited
-        n.pequenyo(miniatura1, "src/images/Miniaturas/HomeButton0.png");
+        n.pequenyo(miniatura1, "src/images/miniaturas/HomeButton0.png");
     }//GEN-LAST:event_miniatura1MouseExited
 
     private void miniatura2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniatura2MouseEntered
-        n.grande(miniatura2, "src/images/Miniaturas/HomeButton1.png");
+        n.grande(miniatura2, "src/images/miniaturas/HomeButton1.png");
     }//GEN-LAST:event_miniatura2MouseEntered
 
     private void miniatura2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniatura2MouseExited
-        n.pequenyo(miniatura2, "src/images/Miniaturas/HomeButton1.png");
+        n.pequenyo(miniatura2, "src/images/miniaturas/HomeButton1.png");
     }//GEN-LAST:event_miniatura2MouseExited
 
     private void miniatura3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniatura3MouseEntered
-        n.grande(miniatura3, "src/images/Miniaturas/HomeButton2.png");
+        n.grande(miniatura3, "src/images/miniaturas/HomeButton2.png");
     }//GEN-LAST:event_miniatura3MouseEntered
 
     private void miniatura3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniatura3MouseExited
-        n.pequenyo(miniatura3, "src/images/Miniaturas/HomeButton2.png");
+        n.pequenyo(miniatura3, "src/images/miniaturas/HomeButton2.png");
     }//GEN-LAST:event_miniatura3MouseExited
 
     private void miniatura4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniatura4MouseEntered
-        n.grande(miniatura4, "src/images/Miniaturas/HomeButton3.png");
+        n.grande(miniatura4, "src/images/miniaturas/HomeButton3.png");
     }//GEN-LAST:event_miniatura4MouseEntered
 
     private void miniatura4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniatura4MouseExited
-        n.pequenyo(miniatura4, "src/images/Miniaturas/HomeButton3.png");
+        n.pequenyo(miniatura4, "src/images/miniaturas/HomeButton3.png");
     }//GEN-LAST:event_miniatura4MouseExited
 
     private void miniatura5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniatura5MouseEntered
-        n.grande(miniatura5, "src/images/Miniaturas/HomeButton4.png");
+        n.grande(miniatura5, "src/images/miniaturas/HomeButton4.png");
     }//GEN-LAST:event_miniatura5MouseEntered
 
     private void miniatura5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniatura5MouseExited
-        n.pequenyo(miniatura5, "src/images/Miniaturas/HomeButton4.png");
+        n.pequenyo(miniatura5, "src/images/miniaturas/HomeButton4.png");
     }//GEN-LAST:event_miniatura5MouseExited
 
     private void miniatura6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniatura6MouseEntered
-        n.grande(miniatura6, "src/images/Miniaturas/HomeButton5.png");
+        n.grande(miniatura6, "src/images/miniaturas/HomeButton5.png");
     }//GEN-LAST:event_miniatura6MouseEntered
 
     private void miniatura6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniatura6MouseExited
-        n.pequenyo(miniatura6, "src/images/Miniaturas/HomeButton5.png");
+        n.pequenyo(miniatura6, "src/images/miniaturas/HomeButton5.png");
     }//GEN-LAST:event_miniatura6MouseExited
 
     private void miniatura1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniatura1MousePressed
