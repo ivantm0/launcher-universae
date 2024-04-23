@@ -5,22 +5,30 @@
 package mainHome;
 
 import java.awt.Image;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import org.json.JSONException;
 
 /**
  *
  * @author ivant
  */
 public class InterfazGame extends javax.swing.JFrame {
-
+    int indexJuego, indexGrado;
     /**
      * Creates new form NewJFrame
      */
-    public InterfazGame() {
+    public InterfazGame() throws IOException, JSONException {
         initComponents();
+        
+        setImageLabel(ImagenCarrusel, n.devuelveImagen(indexGrado, indexJuego,0));
+        System.out.println(indexJuego);
+        BarraTexto.setText(n.devuelveTitulo(indexGrado, indexJuego));
     }
     
     public void setImageLabel(JLabel labelName, String root){
@@ -67,7 +75,7 @@ public class InterfazGame extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        ImagenCarrusel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/EPIS0.png"))); // NOI18N
+        ImagenCarrusel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carrusel/EPIS0.png"))); // NOI18N
         jPanel1.add(ImagenCarrusel, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, -1, -1));
 
         FondoCarruselDcha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Cuadrado fondo enfocado.png"))); // NOI18N
@@ -190,95 +198,145 @@ public class InterfazGame extends javax.swing.JFrame {
         }
                 
         if(cont == 1){
-            setImageLabel(ImagenCarrusel, "src/images/EPIS0.png");
-            setImageLabel(Punto1, "src/images/PuntoCarruselFilled.png"); 
+            try {
+                setImageLabel(ImagenCarrusel, n.devuelveImagen(indexGrado, indexJuego,0));
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazGame.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (JSONException ex) {
+                Logger.getLogger(InterfazGame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            setImageLabel(Punto1, "src/images/PuntoCarruselFilled.png");
             setImageLabel(Punto2, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto3, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto4, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto5, "src/images/PuntoCarruselEmpty.png");
-            System.out.println(cont);
         }else if(cont == 2){
-            setImageLabel(ImagenCarrusel, "src/images/EPIS1.png");
+            try {
+                setImageLabel(ImagenCarrusel, n.devuelveImagen(indexGrado, indexJuego,1));
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazGame.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (JSONException ex) {
+                Logger.getLogger(InterfazGame.class.getName()).log(Level.SEVERE, null, ex);
+            }
             setImageLabel(Punto1, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto2, "src/images/PuntoCarruselFilled.png"); 
             setImageLabel(Punto3, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto4, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto5, "src/images/PuntoCarruselEmpty.png");
-            System.out.println(cont);
         }else if(cont == 3){
-            setImageLabel(ImagenCarrusel, "src/images/EPIS2.png");
+            try {
+                setImageLabel(ImagenCarrusel, n.devuelveImagen(indexGrado, indexJuego,2));
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazGame.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (JSONException ex) {
+                Logger.getLogger(InterfazGame.class.getName()).log(Level.SEVERE, null, ex);
+            }
             setImageLabel(Punto1, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto2, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto3, "src/images/PuntoCarruselFilled.png"); 
             setImageLabel(Punto4, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto5, "src/images/PuntoCarruselEmpty.png");
-            System.out.println(cont);
         }else if(cont == 4){
-            setImageLabel(ImagenCarrusel, "src/images/EPIS3.png");
+            try {
+                setImageLabel(ImagenCarrusel, n.devuelveImagen(indexGrado, indexJuego,3));
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazGame.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (JSONException ex) {
+                Logger.getLogger(InterfazGame.class.getName()).log(Level.SEVERE, null, ex);
+            }
             setImageLabel(Punto1, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto2, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto3, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto4, "src/images/PuntoCarruselFilled.png"); 
             setImageLabel(Punto5, "src/images/PuntoCarruselEmpty.png");
-            System.out.println(cont);
         }else if(cont == 5){
-            setImageLabel(ImagenCarrusel, "src/images/EPIS4.png");
+            try {
+                setImageLabel(ImagenCarrusel, n.devuelveImagen(indexGrado, indexJuego,4));
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazGame.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (JSONException ex) {
+                Logger.getLogger(InterfazGame.class.getName()).log(Level.SEVERE, null, ex);
+            }
             setImageLabel(Punto1, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto2, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto3, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto4, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto5, "src/images/PuntoCarruselFilled.png");
-            System.out.println(cont);
         }
     }//GEN-LAST:event_FlechaIzqMousePressed
 
     private void FlechaDchaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FlechaDchaMousePressed
         cont++;
-        System.out.println(cont);
         if(cont >= 6){
             cont = 1;
         }
         
         if(cont == 1){
-            setImageLabel(ImagenCarrusel, "src/images/EPIS0.png");
+            try {
+                setImageLabel(ImagenCarrusel, n.devuelveImagen(indexGrado, indexJuego,0));
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazGame.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (JSONException ex) {
+                Logger.getLogger(InterfazGame.class.getName()).log(Level.SEVERE, null, ex);
+            }
             setImageLabel(Punto1, "src/images/PuntoCarruselFilled.png"); 
             setImageLabel(Punto2, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto3, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto4, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto5, "src/images/PuntoCarruselEmpty.png");
-            System.out.println(cont);
         }else if(cont == 2){
-            setImageLabel(ImagenCarrusel, "src/images/EPIS1.png");
+            try {
+                setImageLabel(ImagenCarrusel, n.devuelveImagen(indexGrado, indexJuego,1));
+                System.out.println(indexJuego);
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazGame.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (JSONException ex) {
+                Logger.getLogger(InterfazGame.class.getName()).log(Level.SEVERE, null, ex);
+            }
             setImageLabel(Punto1, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto2, "src/images/PuntoCarruselFilled.png"); 
             setImageLabel(Punto3, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto4, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto5, "src/images/PuntoCarruselEmpty.png");
-            System.out.println(cont);
         }else if(cont == 3){
-            setImageLabel(ImagenCarrusel, "src/images/EPIS2.png");
+            try {
+                setImageLabel(ImagenCarrusel, n.devuelveImagen(indexGrado, indexJuego,2));
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazGame.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (JSONException ex) {
+                Logger.getLogger(InterfazGame.class.getName()).log(Level.SEVERE, null, ex);
+            }
             setImageLabel(Punto1, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto2, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto3, "src/images/PuntoCarruselFilled.png"); 
             setImageLabel(Punto4, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto5, "src/images/PuntoCarruselEmpty.png");
-            System.out.println(cont);
         }else if(cont == 4){
-            setImageLabel(ImagenCarrusel, "src/images/EPIS3.png");
+            try {
+                setImageLabel(ImagenCarrusel, n.devuelveImagen(indexGrado, indexJuego,3));
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazGame.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (JSONException ex) {
+                Logger.getLogger(InterfazGame.class.getName()).log(Level.SEVERE, null, ex);
+            }
             setImageLabel(Punto1, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto2, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto3, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto4, "src/images/PuntoCarruselFilled.png"); 
             setImageLabel(Punto5, "src/images/PuntoCarruselEmpty.png");
-            System.out.println(cont);
         }else if(cont == 5){
-            setImageLabel(ImagenCarrusel, "src/images/EPIS4.png");
+            try {
+                setImageLabel(ImagenCarrusel, n.devuelveImagen(indexGrado, indexJuego,4));
+            } catch (IOException ex) {
+                Logger.getLogger(InterfazGame.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (JSONException ex) {
+                Logger.getLogger(InterfazGame.class.getName()).log(Level.SEVERE, null, ex);
+            }
             setImageLabel(Punto1, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto2, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto3, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto4, "src/images/PuntoCarruselEmpty.png"); 
             setImageLabel(Punto5, "src/images/PuntoCarruselFilled.png");
-            System.out.println(cont);
             cont = 0;
         }
     }//GEN-LAST:event_FlechaDchaMousePressed
@@ -337,11 +395,18 @@ public class InterfazGame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InterfazGame().setVisible(true);
+                try {
+                    new InterfazGame().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(InterfazGame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (JSONException ex) {
+                    Logger.getLogger(InterfazGame.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
-
+    
+    
     private int cont = 1;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BarraTexto;

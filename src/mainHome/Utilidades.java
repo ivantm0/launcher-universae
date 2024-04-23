@@ -59,43 +59,23 @@ public class Utilidades {
     }
     
     public static String devuelveTitulo(int indexGrados, int indexJuegos) throws IOException, JSONException{
-        String ruta = "C:\\Users\\ivant\\OneDrive\\Escritorio\\prueba.json";
-        String contents = new String(Files.readAllBytes(Paths.get(ruta)));
-        JSONObject objetoContenido = new JSONObject(contents);
-        JSONArray grados = objetoContenido.getJSONArray("grados");
-        JSONObject objetoGrados = grados.getJSONObject(indexGrados);
-        JSONArray juegos = objetoGrados.getJSONArray("juegos");
+        JSONArray juegos = conectar(indexGrados).getJSONArray("juegos");
         return juegos.getJSONObject(indexJuegos).getString("titulo");
     }
     
-    public static String devuelveImagen(int indexGrados, int indexJuegos) throws IOException, JSONException{
-        String ruta = "C:\\Users\\ivant\\OneDrive\\Escritorio\\prueba.json";
-        String contents = new String(Files.readAllBytes(Paths.get(ruta)));
-        JSONObject objetoContenido = new JSONObject(contents);
-        JSONArray grados = objetoContenido.getJSONArray("grados");
-        JSONObject objetoGrados = grados.getJSONObject(indexGrados);
-        JSONArray juegos = objetoGrados.getJSONArray("juegos");
-        String rutaImagen = "src/images/miniaturas/" + juegos.getJSONObject(indexJuegos).getString("imagen") + ".png";
+    public static String devuelveImagen(int indexGrados, int indexJuegos, int indexMiniatura) throws IOException, JSONException{
+        JSONArray juegos = conectar(indexGrados).getJSONArray("juegos");
+        String rutaImagen = "src/images/carrusel/" + juegos.getJSONObject(indexJuegos).getString("imagen") + indexMiniatura + ".png";
         return rutaImagen;
     }
     
     public static String devuelveRuta(int indexGrados, int indexJuegos) throws IOException, JSONException{
-        String ruta = "C:\\Users\\ivant\\OneDrive\\Escritorio\\prueba.json";
-        String contents = new String(Files.readAllBytes(Paths.get(ruta)));
-        JSONObject objetoContenido = new JSONObject(contents);
-        JSONArray grados = objetoContenido.getJSONArray("grados");
-        JSONObject objetoGrados = grados.getJSONObject(indexGrados);
-        JSONArray juegos = objetoGrados.getJSONArray("juegos");
+        JSONArray juegos = conectar(indexGrados).getJSONArray("juegos");
         return juegos.getJSONObject(indexJuegos).getString("ruta");
     }
     
     public static String devuelveDescripcion(int indexGrados, int indexJuegos) throws IOException, JSONException{
-        String ruta = "C:\\Users\\ivant\\OneDrive\\Escritorio\\prueba.json";
-        String contents = new String(Files.readAllBytes(Paths.get(ruta)));
-        JSONObject objetoContenido = new JSONObject(contents);
-        JSONArray grados = objetoContenido.getJSONArray("grados");
-        JSONObject objetoGrados = grados.getJSONObject(indexGrados);
-        JSONArray juegos = objetoGrados.getJSONArray("juegos");
+        JSONArray juegos = conectar(indexGrados).getJSONArray("juegos");
         return juegos.getJSONObject(indexJuegos).getString("descripcion");
     }
     

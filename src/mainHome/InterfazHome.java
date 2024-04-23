@@ -5,10 +5,14 @@
 package mainHome;
 
 import java.awt.Image;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import org.json.JSONException;
 
 /**
  *
@@ -19,7 +23,8 @@ public class InterfazHome extends javax.swing.JFrame {
     /**
      * Creates new form NewJFrame
      */
-    public InterfazHome() {
+    public InterfazHome() throws IOException, JSONException {
+        this.p = new InterfazGame();
         initComponents();
     }
 
@@ -70,6 +75,9 @@ public class InterfazHome extends javax.swing.JFrame {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 miniatura2MouseExited(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                miniatura2MousePressed(evt);
+            }
         });
         jPanel1.add(miniatura2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 100, -1, -1));
 
@@ -81,6 +89,9 @@ public class InterfazHome extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 miniatura3MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                miniatura3MousePressed(evt);
             }
         });
         jPanel1.add(miniatura3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 100, -1, -1));
@@ -94,6 +105,9 @@ public class InterfazHome extends javax.swing.JFrame {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 miniatura4MouseExited(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                miniatura4MousePressed(evt);
+            }
         });
         jPanel1.add(miniatura4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, -1, -1));
 
@@ -106,6 +120,9 @@ public class InterfazHome extends javax.swing.JFrame {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 miniatura5MouseExited(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                miniatura5MousePressed(evt);
+            }
         });
         jPanel1.add(miniatura5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 470, -1, -1));
 
@@ -117,6 +134,9 @@ public class InterfazHome extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 miniatura6MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                miniatura6MousePressed(evt);
             }
         });
         jPanel1.add(miniatura6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 470, -1, -1));
@@ -178,12 +198,44 @@ public class InterfazHome extends javax.swing.JFrame {
         n.pequenyo(miniatura6, "src/images/miniaturas/HomeButton5.png");
     }//GEN-LAST:event_miniatura6MouseExited
 
+    InterfazGame p;
     private void miniatura1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniatura1MousePressed
-        InterfazGame p = new InterfazGame();
+        int index = 3;
         Utilidades n = new Utilidades();
-        n.showPanel(p.getFondo(), jPanel1);
+        n.showPanel(p.getFondo(), jPanel1); 
+        p.indexJuego=0;
         
     }//GEN-LAST:event_miniatura1MousePressed
+
+    private void miniatura2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniatura2MousePressed
+        Utilidades n = new Utilidades();
+        n.showPanel(p.getFondo(), jPanel1);
+        p.indexJuego=1;
+    }//GEN-LAST:event_miniatura2MousePressed
+
+    private void miniatura3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniatura3MousePressed
+        Utilidades n = new Utilidades();
+        n.showPanel(p.getFondo(), jPanel1);
+        p.indexJuego=2;
+    }//GEN-LAST:event_miniatura3MousePressed
+
+    private void miniatura4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniatura4MousePressed
+        Utilidades n = new Utilidades();
+        n.showPanel(p.getFondo(), jPanel1);
+        p.indexJuego=3;
+    }//GEN-LAST:event_miniatura4MousePressed
+
+    private void miniatura5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniatura5MousePressed
+        Utilidades n = new Utilidades();
+        n.showPanel(p.getFondo(), jPanel1);
+        p.indexJuego=4;
+    }//GEN-LAST:event_miniatura5MousePressed
+
+    private void miniatura6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniatura6MousePressed
+        Utilidades n = new Utilidades();
+        n.showPanel(p.getFondo(), jPanel1);
+        p.indexJuego=5;
+    }//GEN-LAST:event_miniatura6MousePressed
 
     public JPanel getFondo() {
         return jPanel1;
@@ -226,7 +278,13 @@ public class InterfazHome extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InterfazHome().setVisible(true);
+                try {
+                    new InterfazHome().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(InterfazHome.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (JSONException ex) {
+                    Logger.getLogger(InterfazHome.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

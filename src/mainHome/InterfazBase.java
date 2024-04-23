@@ -4,7 +4,11 @@
  */
 package mainHome;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JPanel;
+import org.json.JSONException;
 
 /**
  *
@@ -15,7 +19,8 @@ public class InterfazBase extends javax.swing.JFrame {
     /**
      * Creates new form LauncherBase
      */
-    public InterfazBase() {
+    public InterfazBase() throws IOException, JSONException {
+        this.game = new InterfazGame();
         initComponents();
         this.setExtendedState(this.MAXIMIZED_BOTH);
         
@@ -370,10 +375,18 @@ public class InterfazBase extends javax.swing.JFrame {
         n.pequenyo(Escudo14, "src/images/escudos/LauncherButton13.png");
     }//GEN-LAST:event_Escudo14MouseExited
 
+    InterfazGame game;
     private void Escudo1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Escudo1MousePressed
-        InterfazHome p = new InterfazHome();
-        Utilidades n = new Utilidades();
-        n.showPanel(p.getFondo(), contenido);
+        InterfazHome p;
+        try {
+            p = new InterfazHome();
+            n.showPanel(p.getFondo(), contenido);
+            game.indexGrado=0;
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazBase.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (JSONException ex) {
+            Logger.getLogger(InterfazBase.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_Escudo1MousePressed
 
     
@@ -408,11 +421,17 @@ public class InterfazBase extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InterfazBase().setVisible(true);
+                try {
+                    new InterfazBase().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(InterfazBase.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (JSONException ex) {
+                    Logger.getLogger(InterfazBase.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Escudo1;
     private javax.swing.JLabel Escudo10;
