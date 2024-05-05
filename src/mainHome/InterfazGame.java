@@ -27,7 +27,6 @@ public class InterfazGame extends javax.swing.JFrame {
         initComponents();
         
         setImageLabel(ImagenCarrusel, n.devuelveImagen(indexGrado, indexJuego,0));
-        System.out.println(indexJuego);
         BarraTexto.setText(n.devuelveTitulo(indexGrado, indexJuego));
     }
     
@@ -252,6 +251,7 @@ public class InterfazGame extends javax.swing.JFrame {
         }else if(cont == 5){
             try {
                 setImageLabel(ImagenCarrusel, n.devuelveImagen(indexGrado, indexJuego,4));
+                BarraTexto.setText(n.devuelveTitulo(indexGrado, indexJuego));
             } catch (IOException ex) {
                 Logger.getLogger(InterfazGame.class.getName()).log(Level.SEVERE, null, ex);
             } catch (JSONException ex) {
@@ -274,6 +274,7 @@ public class InterfazGame extends javax.swing.JFrame {
         if(cont == 1){
             try {
                 setImageLabel(ImagenCarrusel, n.devuelveImagen(indexGrado, indexJuego,0));
+                
             } catch (IOException ex) {
                 Logger.getLogger(InterfazGame.class.getName()).log(Level.SEVERE, null, ex);
             } catch (JSONException ex) {
@@ -287,7 +288,7 @@ public class InterfazGame extends javax.swing.JFrame {
         }else if(cont == 2){
             try {
                 setImageLabel(ImagenCarrusel, n.devuelveImagen(indexGrado, indexJuego,1));
-                System.out.println(indexJuego);
+                BarraTexto.setText(n.devuelveTitulo(indexGrado, indexJuego));
             } catch (IOException ex) {
                 Logger.getLogger(InterfazGame.class.getName()).log(Level.SEVERE, null, ex);
             } catch (JSONException ex) {
