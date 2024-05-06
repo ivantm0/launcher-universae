@@ -20,12 +20,13 @@ import org.json.JSONException;
  */
 public class InterfazHome extends javax.swing.JFrame {
 
+    int indexGrado, indexJuego;
     /**
      * Creates new form NewJFrame
      */
-    public InterfazHome() throws IOException, JSONException {
-        this.p = new InterfazGame();
+    public InterfazHome(int indexG, int indexJ) throws IOException, JSONException {
         initComponents();
+        this.indexGrado = indexG;
     }
 
     /**
@@ -198,43 +199,89 @@ public class InterfazHome extends javax.swing.JFrame {
         n.pequenyo(miniatura6, "src/images/miniaturas/HomeButton5.png");
     }//GEN-LAST:event_miniatura6MouseExited
 
-    InterfazGame p;
+    
     private void miniatura1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniatura1MousePressed
-        int index = 3;
+        indexJuego = 0;
+        InterfazGame p = null;
+        try {
+            p = new InterfazGame(indexGrado, indexJuego);
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazHome.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (JSONException ex) {
+            Logger.getLogger(InterfazHome.class.getName()).log(Level.SEVERE, null, ex);
+        }
         Utilidades n = new Utilidades();
         n.showPanel(p.getFondo(), jPanel1); 
-        p.indexJuego=0;
-        
     }//GEN-LAST:event_miniatura1MousePressed
 
     private void miniatura2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniatura2MousePressed
+        indexJuego = 1;
+        InterfazGame p = null;
+        try {
+            p = new InterfazGame(indexGrado, indexJuego);
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazHome.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (JSONException ex) {
+            Logger.getLogger(InterfazHome.class.getName()).log(Level.SEVERE, null, ex);
+        }
         Utilidades n = new Utilidades();
         n.showPanel(p.getFondo(), jPanel1);
-        p.indexJuego=1;
     }//GEN-LAST:event_miniatura2MousePressed
 
     private void miniatura3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniatura3MousePressed
+        indexJuego = 2;
+        InterfazGame p = null;
+        try {
+            p = new InterfazGame(indexGrado, indexJuego);
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazHome.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (JSONException ex) {
+            Logger.getLogger(InterfazHome.class.getName()).log(Level.SEVERE, null, ex);
+        }
         Utilidades n = new Utilidades();
         n.showPanel(p.getFondo(), jPanel1);
-        p.indexJuego=2;
     }//GEN-LAST:event_miniatura3MousePressed
 
     private void miniatura4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniatura4MousePressed
+        indexJuego = 3;
+        InterfazGame p = null;
+        try {
+            p = new InterfazGame(indexGrado, indexJuego);
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazHome.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (JSONException ex) {
+            Logger.getLogger(InterfazHome.class.getName()).log(Level.SEVERE, null, ex);
+        }
         Utilidades n = new Utilidades();
         n.showPanel(p.getFondo(), jPanel1);
-        p.indexJuego=3;
     }//GEN-LAST:event_miniatura4MousePressed
 
     private void miniatura5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniatura5MousePressed
+        indexJuego = 4;
+        InterfazGame p = null;
+        try {
+            p = new InterfazGame(indexGrado, indexJuego);
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazHome.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (JSONException ex) {
+            Logger.getLogger(InterfazHome.class.getName()).log(Level.SEVERE, null, ex);
+        }
         Utilidades n = new Utilidades();
         n.showPanel(p.getFondo(), jPanel1);
-        p.indexJuego=4;
     }//GEN-LAST:event_miniatura5MousePressed
 
     private void miniatura6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniatura6MousePressed
+        indexJuego = 5;
+        InterfazGame p = null;
+        try {
+            p = new InterfazGame(indexGrado, indexJuego);
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazHome.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (JSONException ex) {
+            Logger.getLogger(InterfazHome.class.getName()).log(Level.SEVERE, null, ex);
+        }
         Utilidades n = new Utilidades();
         n.showPanel(p.getFondo(), jPanel1);
-        p.indexJuego=5;
     }//GEN-LAST:event_miniatura6MousePressed
 
     public JPanel getFondo() {
@@ -244,50 +291,6 @@ public class InterfazHome extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InterfazHome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InterfazHome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InterfazHome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InterfazHome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    new InterfazHome().setVisible(true);
-                } catch (IOException ex) {
-                    Logger.getLogger(InterfazHome.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (JSONException ex) {
-                    Logger.getLogger(InterfazHome.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        });
-    }
 
     private int cont = 1;
     // Variables declaration - do not modify//GEN-BEGIN:variables

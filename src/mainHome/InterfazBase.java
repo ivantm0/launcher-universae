@@ -16,15 +16,16 @@ import org.json.JSONException;
  */
 public class InterfazBase extends javax.swing.JFrame {
 
+    int indexGrado, indexJuego;
     /**
      * Creates new form LauncherBase
      */
     public InterfazBase() throws IOException, JSONException {
-        this.game = new InterfazGame();
+        this.game = new InterfazGame(indexGrado, indexJuego);
         initComponents();
         this.setExtendedState(this.MAXIMIZED_BOTH);
         
-        InterfazHome p = new InterfazHome();
+        InterfazHome p = new InterfazHome(indexGrado, indexJuego);
         Utilidades n = new Utilidades();
         n.showPanel(p.getFondo(), contenido);
     }
@@ -62,6 +63,7 @@ public class InterfazBase extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1920, 1080));
         setMinimumSize(new java.awt.Dimension(1920, 1080));
+        setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(1920, 1080));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -379,9 +381,9 @@ public class InterfazBase extends javax.swing.JFrame {
     private void Escudo1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Escudo1MousePressed
         InterfazHome p;
         try {
-            p = new InterfazHome();
+            indexGrado = 0;
+            p = new InterfazHome(indexGrado, indexJuego);
             n.showPanel(p.getFondo(), contenido);
-            game.indexGrado=0;
         } catch (IOException ex) {
             Logger.getLogger(InterfazBase.class.getName()).log(Level.SEVERE, null, ex);
         } catch (JSONException ex) {
