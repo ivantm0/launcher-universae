@@ -39,6 +39,7 @@ public class InterfazHome extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        salir = new javax.swing.JLabel();
         miniatura1 = new javax.swing.JLabel();
         miniatura2 = new javax.swing.JLabel();
         miniatura3 = new javax.swing.JLabel();
@@ -51,6 +52,15 @@ public class InterfazHome extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Comenzar.png"))); // NOI18N
+        salir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        salir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                salirMouseClicked(evt);
+            }
+        });
+        jPanel1.add(salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 810, -1, -1));
 
         miniatura1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Miniaturas/HomeButton0.png"))); // NOI18N
         miniatura1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -284,6 +294,10 @@ public class InterfazHome extends javax.swing.JFrame {
         n.showPanel(p.getFondo(), jPanel1);
     }//GEN-LAST:event_miniatura6MousePressed
 
+    private void salirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salirMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_salirMouseClicked
+
     public JPanel getFondo() {
         return jPanel1;
     }
@@ -302,5 +316,6 @@ public class InterfazHome extends javax.swing.JFrame {
     private javax.swing.JLabel miniatura4;
     private javax.swing.JLabel miniatura5;
     private javax.swing.JLabel miniatura6;
+    private javax.swing.JLabel salir;
     // End of variables declaration//GEN-END:variables
 }

@@ -57,6 +57,7 @@ public class InterfazGame extends javax.swing.JFrame {
         Punto3 = new javax.swing.JLabel();
         Punto4 = new javax.swing.JLabel();
         Punto5 = new javax.swing.JLabel();
+        salir = new javax.swing.JLabel();
         Comenzar = new javax.swing.JLabel();
         BarraTexto = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -128,7 +129,17 @@ public class InterfazGame extends javax.swing.JFrame {
         Punto5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PuntoCarruselEmpty.png"))); // NOI18N
         jPanel1.add(Punto5, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 520, -1, -1));
 
+        salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Comenzar.png"))); // NOI18N
+        salir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        salir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                salirMouseClicked(evt);
+            }
+        });
+        jPanel1.add(salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 810, -1, -1));
+
         Comenzar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Comenzar.png"))); // NOI18N
+        Comenzar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(Comenzar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 810, -1, -1));
 
         BarraTexto.setFont(new java.awt.Font("Raleway Black", 0, 18)); // NOI18N
@@ -359,6 +370,10 @@ public class InterfazGame extends javax.swing.JFrame {
         n.pequenyo(FlechaDcha, "src/images/Flecha derecha.png");
     }//GEN-LAST:event_FlechaDchaMouseExited
 
+    private void salirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salirMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_salirMouseClicked
+
     public JPanel getFondo() {
         return jPanel1;
     }
@@ -391,5 +406,6 @@ public class InterfazGame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel salir;
     // End of variables declaration//GEN-END:variables
 }

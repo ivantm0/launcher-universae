@@ -4,7 +4,10 @@
  */
 package mainHome;
 
+import java.awt.Desktop;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JPanel;
@@ -43,6 +46,16 @@ public class InterfazBase extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        Web = new javax.swing.JLabel();
+        Youtube = new javax.swing.JLabel();
+        Twitch = new javax.swing.JLabel();
+        Twitter = new javax.swing.JLabel();
+        Insta = new javax.swing.JLabel();
+        Tiktok = new javax.swing.JLabel();
+        Facebook = new javax.swing.JLabel();
+        Linkedin = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
         Escudo1 = new javax.swing.JLabel();
         Escudo2 = new javax.swing.JLabel();
         Escudo3 = new javax.swing.JLabel();
@@ -71,6 +84,82 @@ public class InterfazBase extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(2573, 0, -1, -1));
+
+        Web.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Web.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                WebMouseClicked(evt);
+            }
+        });
+        getContentPane().add(Web, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 220, 30));
+
+        Youtube.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Youtube.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                YoutubeMouseClicked(evt);
+            }
+        });
+        getContentPane().add(Youtube, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 200, 30));
+
+        Twitch.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Twitch.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TwitchMouseClicked(evt);
+            }
+        });
+        getContentPane().add(Twitch, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 200, 30));
+
+        Twitter.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Twitter.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TwitterMouseClicked(evt);
+            }
+        });
+        getContentPane().add(Twitter, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 160, 30));
+
+        Insta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Insta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                InstaMouseClicked(evt);
+            }
+        });
+        getContentPane().add(Insta, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 160, 30));
+
+        Tiktok.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Tiktok.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TiktokMouseClicked(evt);
+            }
+        });
+        getContentPane().add(Tiktok, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, 160, 30));
+
+        Facebook.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Facebook.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FacebookMouseClicked(evt);
+            }
+        });
+        getContentPane().add(Facebook, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 540, 160, 40));
+
+        Linkedin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Linkedin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LinkedinMouseClicked(evt);
+            }
+        });
+        getContentPane().add(Linkedin, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 600, 160, 30));
+
+        jTextField1.setBackground(new java.awt.Color(51, 102, 255));
+        jTextField1.setText("Buscar");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1720, 20, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Flecha derecha.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1810, 20, -1, -1));
 
         Escudo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/escudos/LauncherButton0.png"))); // NOI18N
         Escudo1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -391,6 +480,90 @@ public class InterfazBase extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Escudo1MousePressed
 
+    private void WebMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WebMouseClicked
+        try {
+            Desktop.getDesktop().browse(new URI("https://universae.com/"));
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(InterfazBase.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazBase.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_WebMouseClicked
+
+    private void YoutubeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_YoutubeMouseClicked
+        try {
+            Desktop.getDesktop().browse(new URI("https://www.youtube.com/@UNIVERSAE_FP"));
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(InterfazBase.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazBase.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_YoutubeMouseClicked
+
+    private void TwitchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TwitchMouseClicked
+        try {
+            Desktop.getDesktop().browse(new URI("https://www.twitch.tv/universae_fp"));
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(InterfazBase.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazBase.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_TwitchMouseClicked
+
+    private void TwitterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TwitterMouseClicked
+        try {
+            Desktop.getDesktop().browse(new URI("https://twitter.com/_universae?lang=es"));
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(InterfazBase.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazBase.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_TwitterMouseClicked
+
+    private void InstaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InstaMouseClicked
+        try {
+            Desktop.getDesktop().browse(new URI("https://www.instagram.com/_universae/?hl=es"));
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(InterfazBase.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazBase.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_InstaMouseClicked
+
+    private void TiktokMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TiktokMouseClicked
+        try {
+            Desktop.getDesktop().browse(new URI("https://www.tiktok.com/@_universae?lang=es"));
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(InterfazBase.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazBase.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_TiktokMouseClicked
+
+    private void FacebookMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FacebookMouseClicked
+        try {
+            Desktop.getDesktop().browse(new URI("https://www.facebook.com/UNIVERSAE/"));
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(InterfazBase.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazBase.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_FacebookMouseClicked
+
+    private void LinkedinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LinkedinMouseClicked
+        try {
+            Desktop.getDesktop().browse(new URI("https://es.linkedin.com/school/universae/?trk=public_post_feed-actor-image"));
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(InterfazBase.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazBase.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_LinkedinMouseClicked
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
     
     /**
      * @param args the command line arguments
@@ -449,8 +622,18 @@ public class InterfazBase extends javax.swing.JFrame {
     private javax.swing.JLabel Escudo7;
     private javax.swing.JLabel Escudo8;
     private javax.swing.JLabel Escudo9;
+    private javax.swing.JLabel Facebook;
     private javax.swing.JLabel Fondo;
+    private javax.swing.JLabel Insta;
+    private javax.swing.JLabel Linkedin;
+    private javax.swing.JLabel Tiktok;
+    private javax.swing.JLabel Twitch;
+    private javax.swing.JLabel Twitter;
+    private javax.swing.JLabel Web;
+    private javax.swing.JLabel Youtube;
     private javax.swing.JPanel contenido;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
