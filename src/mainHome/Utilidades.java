@@ -50,12 +50,25 @@ public class Utilidades {
     }
     
     public static JSONObject conectar(int indexGrados) throws IOException, JSONException{
-        String ruta = "C:\\Users\\ivant\\OneDrive\\Escritorio\\prueba.json";
+        String ruta = "src/mainHome/Grados.json";
         String contents = new String(Files.readAllBytes(Paths.get(ruta)));
         JSONObject objetoContenido = new JSONObject(contents);
         JSONArray grados = objetoContenido.getJSONArray("grados");
         JSONObject objetoGrados = grados.getJSONObject(indexGrados);
         return objetoGrados;
+    }
+    
+    public static JSONArray arrayGrados() throws IOException, JSONException{
+        String ruta = "src/mainHome/Grados.json";
+        String contents = new String(Files.readAllBytes(Paths.get(ruta)));
+        JSONObject objetoContenido = new JSONObject(contents);
+        JSONArray grados = objetoContenido.getJSONArray("grados");
+        return grados;
+    }
+    
+    public static JSONArray arrayJuegos(int indexGrados) throws IOException, JSONException{
+        JSONArray juegos = conectar(indexGrados).getJSONArray("juegos");
+        return juegos;
     }
     
     public static String devuelveTitulo(int indexGrados, int indexJuegos) throws IOException, JSONException{

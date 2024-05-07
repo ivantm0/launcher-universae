@@ -4,6 +4,7 @@
  */
 package mainHome;
 
+import java.awt.Color;
 import java.awt.Desktop;
 import java.io.IOException;
 import java.net.URI;
@@ -53,9 +54,10 @@ public class InterfazBase extends javax.swing.JFrame {
         Insta = new javax.swing.JLabel();
         Tiktok = new javax.swing.JLabel();
         Facebook = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        TextoBuscar = new javax.swing.JTextField();
+        BotonBuscar = new javax.swing.JLabel();
         Linkedin = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
         Escudo1 = new javax.swing.JLabel();
         Escudo2 = new javax.swing.JLabel();
         Escudo3 = new javax.swing.JLabel();
@@ -141,6 +143,31 @@ public class InterfazBase extends javax.swing.JFrame {
         });
         getContentPane().add(Facebook, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 540, 160, 40));
 
+        jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
+        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 750, 150, -1));
+
+        TextoBuscar.setEditable(false);
+        TextoBuscar.setBackground(new java.awt.Color(10, 38, 72));
+        TextoBuscar.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
+        TextoBuscar.setForeground(new java.awt.Color(204, 204, 204));
+        TextoBuscar.setText("Buscar...");
+        TextoBuscar.setBorder(null);
+        TextoBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                TextoBuscarMousePressed(evt);
+            }
+        });
+        getContentPane().add(TextoBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 720, 150, 40));
+
+        BotonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Flecha derecha.png"))); // NOI18N
+        BotonBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                BotonBuscarMousePressed(evt);
+            }
+        });
+        getContentPane().add(BotonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 720, -1, -1));
+
         Linkedin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Linkedin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -148,18 +175,6 @@ public class InterfazBase extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Linkedin, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 600, 160, 30));
-
-        jTextField1.setBackground(new java.awt.Color(51, 102, 255));
-        jTextField1.setText("Buscar");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1720, 20, -1, -1));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Flecha derecha.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1810, 20, -1, -1));
 
         Escudo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/escudos/LauncherButton0.png"))); // NOI18N
         Escudo1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -333,6 +348,7 @@ public class InterfazBase extends javax.swing.JFrame {
         getContentPane().add(Escudo14, new org.netbeans.lib.awtextra.AbsoluteConstraints(1740, 90, -1, -1));
 
         contenido.setBackground(new java.awt.Color(10, 38, 72));
+        contenido.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout contenidoLayout = new javax.swing.GroupLayout(contenido);
         contenido.setLayout(contenidoLayout);
@@ -560,9 +576,43 @@ public class InterfazBase extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_LinkedinMouseClicked
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void TextoBuscarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextoBuscarMousePressed
+        TextoBuscar.setText("");
+        TextoBuscar.setForeground(Color.white);
+        TextoBuscar.setEditable(true);
+    }//GEN-LAST:event_TextoBuscarMousePressed
+
+    private void BotonBuscarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscarMousePressed
+        String texto = TextoBuscar.getText();
+        int cont = 0;
+        try {
+            for(int i=0; i<n.arrayGrados().length()-1; i++){
+                try {
+                    for(int j=0; j<n.arrayJuegos(i).length()-1; j++){
+                        if(n.devuelveTitulo(i, j).toLowerCase().contains(texto.toLowerCase())){
+                            InterfazGame g = new InterfazGame(i, j);
+                            n.showPanel(g.getFondo(), contenido);
+                            TextoBuscar.setText("Buscar...");
+                            cont++;
+                        }
+                    }
+                    if(cont == 0){
+                            InterfazVacia v = new InterfazVacia();
+                            n.showPanel(v, contenido);
+                            TextoBuscar.setText("Buscar...");
+                        }
+                } catch (IOException ex) {
+                    Logger.getLogger(InterfazBase.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (JSONException ex) {
+                    Logger.getLogger(InterfazBase.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(InterfazBase.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (JSONException ex) {
+            Logger.getLogger(InterfazBase.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_BotonBuscarMousePressed
 
     
     /**
@@ -608,6 +658,7 @@ public class InterfazBase extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BotonBuscar;
     private javax.swing.JLabel Escudo1;
     private javax.swing.JLabel Escudo10;
     private javax.swing.JLabel Escudo11;
@@ -626,14 +677,14 @@ public class InterfazBase extends javax.swing.JFrame {
     private javax.swing.JLabel Fondo;
     private javax.swing.JLabel Insta;
     private javax.swing.JLabel Linkedin;
+    private javax.swing.JTextField TextoBuscar;
     private javax.swing.JLabel Tiktok;
     private javax.swing.JLabel Twitch;
     private javax.swing.JLabel Twitter;
     private javax.swing.JLabel Web;
     private javax.swing.JLabel Youtube;
     private javax.swing.JPanel contenido;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

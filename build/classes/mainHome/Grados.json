@@ -1,0 +1,65 @@
+{
+	"grados": 
+	[
+		{
+			"nombre": "grado1",
+			"juegos": 
+			[
+				{
+					"titulo": "Embarque y desembarque en helicoptero",
+					"imagen": "Embarque",
+					"ruta": "src/Juego/CampoPracticas_EPIS.exe",
+					"descripcion": "blablablalbllablalbalbalblbabla"
+				},
+				{
+					"titulo": "Protocolo ante una hemorragia externa",
+					"imagen": "Hemorragia",
+					"ruta2": "src/Juego/CampoPracticas_EPIS.exe",
+					"descripcion": "blablablalbllablalbalbalblbabla"
+				},
+				{
+					"titulo": "Maniobras de extinción según la instalación",
+					"imagen": "Extincion",
+					"ruta2": "src/Juego/CampoPracticas_EPIS.exe",
+					"descripcion": "blablablalbllablalbalbalblbabla"
+				},
+				{
+					"titulo": "tipología y características de los EPIs",
+					"imagen": "EPIS",
+					"ruta2": "src/Juego/CampoPracticas_EPIS.exe",
+					"descripcion": "blablablalbllablalbalbalblbabla"
+				},
+				{
+					"titulo": "Señalización a helicóptero desde tierra",
+					"imagen": "Helicoptero",
+					"ruta2": "src/Juego/CampoPracticas_EPIS.exe",
+					"descripcion": "blablablalbllablalbalbalblbabla"
+				},
+				{
+					"titulo": "Rescate en ascensor",
+					"imagen": "Ascensor",
+					"ruta2": "src/Juego/CampoPracticas_EPIS.exe",
+					"descripcion": "blablablalbllablalbalbalblbabla"
+				}
+			]
+		},
+		{
+			"nombre": "grado2",
+			"juegos": 
+			[
+				{
+					"titulo": "es esteee y desembarque en helicoptero",
+					"imagen": "paquete",
+					"ruta": "src/Juego/CampoPracticas_EPIS.exe",
+					"descripcion": "blablablalbllablalbalbalblbabla"
+				},
+				{
+					"titulo": "2222222Protocolo ante una hemorragia externa",
+					"imagen": "oleeeee",
+					"ruta": "src/Juego/CampoPracticas_EPIS.exe",
+					"descripcion": "blablablalbllablalbalbalblbabla"
+				}
+			]
+		}
+	]
+}
